@@ -3,6 +3,22 @@ var rootUrl = "kelter-antunes.github.io/";
 //api end point
 // /games_api/leaderboard.aspx?action=update
 
+var username;
+
+FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+        FB.api('/me', function(response) {
+            username = response.username;
+        });
+    } else if (response.status === 'not_authorized') {
+        // the user is logged in to Facebook, 
+        // but has not authenticated your app
+    } else {
+        // the user isn't logged in to Facebook.
+    }
+});
+
+
 function retreiveScore() {
     var hash = location.hash.substring(1);
     $.post("http://" + apiUrl + "/leaderboard/show/" + hash, {}, function(data) {
@@ -22,14 +38,19 @@ function submitScore() {
 
 function updateScore(user, score) {
     var hash = location.hash.substring(1);
-    $.post("http://" + apiUrl + "/games_api/leaderboard.aspx?action=update&user=" + user + "&score=" + score, function(data) {
-        if (data.success) {
-            $(".error").hide();
-            //window.location = "http://" + rootUrl + "/leaderboard/"
-        } else {
-            $(".error").show().text(data.message);
-        }
-    }, "jsonp")
+
+    if (username != "") {
+        $.post("http://" + apiUrl + "/games_api/leaderboard.aspx?action=update&user=" + user + "&score=" + score, function(data) {
+            if (data.success) {
+                $(".error").hide();
+                //window.location = "http://" + rootUrl + "/leaderboard/"
+            } else {
+                $(".error").show().text(data.message);
+            }
+        }, "jsonp")
+
+    };
+
 }
 
 function listScores() {
