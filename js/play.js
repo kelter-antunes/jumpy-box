@@ -2,7 +2,7 @@
   Programming and art made by www.lessmilk.com
   You can freely look at the code below, 
   but you are not allowed to use the code or art to make your own games
-*/
+  */
 
 var map = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -40,6 +40,10 @@ Game.Play.prototype = {
 
     create: function() {
         this.cursor = this.game.input.keyboard.createCursorKeys();
+
+        // Display background
+        this.bg = this.game.add.tileSprite(0, 0, game.stage.bounds.width, game.cache.getImage('background').height, 'background');
+
 
         this.player = this.game.add.sprite(80, h * 2 / 3 - 20, 'player');
         this.player.body.bounce.y = 0;
