@@ -15,7 +15,7 @@ Game.Load = function(game) {
 
 Game.Load.prototype = {
     preload: function() {
-        game.stage.backgroundColor = '#70c5ce';
+        //game.stage.backgroundColor = '#70c5ce';
 
 
 
