@@ -41,8 +41,6 @@ Game.Play.prototype = {
     create: function() {
         this.cursor = this.game.input.keyboard.createCursorKeys();
 
-        this.background = game.add.tileSprite(0, 0, 600, 200, 'bg');
-
         this.player = this.game.add.sprite(80, h * 2 / 3 - 20, 'player');
         this.player.body.bounce.y = 0;
         this.player.anchor.setTo(0.5, 0.5);
