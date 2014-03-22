@@ -40,8 +40,6 @@ Game.Load.prototype = {
 
         game.load.image('bg', 'images/background.png');
 
-        game.stage.background = 'bg';
-
     },
     create: function() {
         game.state.start('Play');
