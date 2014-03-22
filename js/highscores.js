@@ -1,5 +1,6 @@
 var apiUrl = "kelter.outsystemscloud.com";
 var rootUrl = "kelter-antunes.github.io/";
+var gameKey = "53d3d519-ad4d-40bd-82e6-eeaa50bfe41b";
 //api end point
 // /games_api/leaderboard.aspx?action=update
 var username;
@@ -25,7 +26,7 @@ function updateScore(score) {
     var hash = location.hash.substring(1);
 
     if (username != "") {
-        $.post("http://" + apiUrl + "/games_api/leaderboard.aspx?action=update&user=" + username + "&score=" + score, function(data) {
+        $.post("http://" + apiUrl + "/games_api/leaderboard.aspx?action=update&user=" + username + "&score=" + score + "&gamekey=" + gameKey, function(data) {
             if (data.success) {
                 $(".error").hide();
                 //window.location = "http://" + rootUrl + "/leaderboard/"
