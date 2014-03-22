@@ -29,7 +29,7 @@ function updateScore(user, score) {
         } else {
             $(".error").show().text(data.message);
         }
-    }, "json")
+    }, "jsonp")
 }
 
 function listScores() {
