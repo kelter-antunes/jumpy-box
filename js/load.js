@@ -16,6 +16,9 @@ Game.Load = function(game) {
 Game.Load.prototype = {
     preload: function() {
         game.stage.backgroundColor = '#9b59b6';
+
+
+
         label1 = game.add.text(Math.floor(w / 2), Math.floor(h / 2) - 20, 'Box Jump', {
             font: '30px Arial',
             fill: '#fff'
@@ -34,6 +37,8 @@ Game.Load.prototype = {
         game.load.audio('hit', 'sounds/hit.wav');
         game.load.audio('jump', 'sounds/jump.wav');
         game.load.audio('music', 'sounds/music.wav');
+
+        game.load.image('bg', 'images/background.png');
 
     },
     create: function() {
