@@ -15,7 +15,7 @@ Game.Load = function(game) {
 
 Game.Load.prototype = {
     preload: function() {
-        game.stage.backgroundColor = '#9b59b6';
+        game.stage.backgroundColor = '#70c5ce';
 
 
 
@@ -40,7 +40,7 @@ Game.Load.prototype = {
 
         game.load.image('bg', 'images/background.png');
 
-        game.stage.background = 'background';
+        game.stage.background = 'bg';
 
     },
     create: function() {
