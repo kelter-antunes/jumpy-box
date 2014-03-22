@@ -36,11 +36,11 @@ function submitScore() {
     }, "json")
 }
 
-function updateScore(user, score) {
+function updateScore(score) {
     var hash = location.hash.substring(1);
 
     if (username != "") {
-        $.post("http://" + apiUrl + "/games_api/leaderboard.aspx?action=update&user=" + user + "&score=" + score, function(data) {
+        $.post("http://" + apiUrl + "/games_api/leaderboard.aspx?action=update&user=" + username + "&score=" + score, function(data) {
             if (data.success) {
                 $(".error").hide();
                 //window.location = "http://" + rootUrl + "/leaderboard/"

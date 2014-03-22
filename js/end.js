@@ -15,6 +15,6 @@ Game.End.prototype = {
         label1.anchor.setTo(0.5, 0.5);
         label2.anchor.setTo(0.5, 0.5);
 
-        updateScore('msa', death);
+        updateScore(death);
     }
 };
