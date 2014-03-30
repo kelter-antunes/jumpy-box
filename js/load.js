@@ -36,6 +36,7 @@ Game.Load.prototype = {
         game.load.audio('jump', 'sounds/jump.wav');
         game.load.audio('music', 'sounds/music.wav');
 
+
     },
     create: function() {
         game.state.start('Play');
